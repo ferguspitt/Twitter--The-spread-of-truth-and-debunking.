@@ -45,7 +45,7 @@ def TweetInput(TweetURL):
 	
 	output={}
 	#Make all the URLs and IDs we need
-	UserMatch=re.search(r'https://twitter.com/[a-zA-Z]+',TweetURL)
+	UserMatch=re.search(r'https://twitter.com/[a-zA-Z_-]+',TweetURL)
 	if UserMatch:
 		User=UserMatch.group(0)
 		User=User.replace('https://twitter.com/','')
@@ -148,17 +148,15 @@ def TweetInput(TweetURL):
 
 	return output
 
-'''
-Test with a subset:
-listofTweets=['https://twitter.com/FoxNews/status/324584418196983809','https://twitter.com/ellievhall/status/324584790156251137','https://twitter.com/paulafaris/status/324584392766930944','https://twitter.com/todayshow/status/324585223088136192']
+listofTweets=['https://twitter.com/Boston_Police/status/325409894830329856']
 	
-'''
+
 
 
 #This should probably come in from a storify or something, but for the moment, I'm passing it manually.
-
+'''
 listofTweets=['https://twitter.com/nypost/statuses/323896172299288577','https://twitter.com/nypost/statuses/323901175269314561','https://twitter.com/nypost/status/324571144948703232','https://twitter.com/nypost/statuses/324238174228451329','https://twitter.com/AP/status/324578507290185728','https://twitter.com/Reuters/status/324578856872849408','https://twitter.com/BuzzFeedNews/status/324579672191029248','https://twitter.com/nypost/status/324579553668390912','https://twitter.com/ReutersUS/status/324580832381661184','https://twitter.com/ABC/status/324581007053434880','https://twitter.com/AP/status/324583755350147072','https://twitter.com/CBSNews/status/324584027166228480','https://twitter.com/catesish/status/324583978889793537','https://twitter.com/FoxNews/status/324584418196983809','https://twitter.com/ellievhall/status/324584790156251137','https://twitter.com/paulafaris/status/324584392766930944','https://twitter.com/todayshow/status/324585223088136192','https://twitter.com/CNN/status/324586553441677315','https://twitter.com/Reuters/status/324589083559092224','https://twitter.com/CNN/status/324721784723210240','https://twitter.com/BostonGlobe/status/324589433875734528','https://twitter.com/Boston_Police/status/324591574807891968','https://twitter.com/CNN/status/324721784723210240','https://twitter.com/nypost/status/324593024896208896','https://twitter.com/CBSNews/status/324593633275834369','https://twitter.com/BloombergNews/status/324594004765319168','https://twitter.com/AP/status/324595020059537408','https://twitter.com/FoxNews/status/324595569731436546','https://twitter.com/FBIBoston/status/324598215536173056','https://twitter.com/FoxNews/status/324890629945577473','https://twitter.com/nypost/status/324851511651864576']
-
+'''
 
 ListOfAttention=[]
 for tweet in listofTweets:
